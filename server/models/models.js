@@ -21,12 +21,13 @@ const Product = sequelize.define("product", {
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
     rating: {type: DataTypes.INTEGER, defaultValue: 0},
-    images: {type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false},
+    image: {type: DataTypes.STRING, allowNull: false},
 })
 
 const Brand = sequelize.define("brand", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
+    image: {type: DataTypes.STRING},
 })
 
 const ProductInfo = sequelize.define("productInfo", {
