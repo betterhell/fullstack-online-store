@@ -1,14 +1,20 @@
 const {Brand} = require("../models/models")
 const ApiError = require("../error/ApiError")
 
+const uuid = require("uuid");
+const path = require("path");
+
 const createBrand = async (req, res, next) => {
     try {
-        const {name, image} = req.body
-        const brand = await Brand.create({name, image})
+        const {name} = req.body
+        const {image} = req.files
 
-        if (!brand) {
-            res.json(401).json({})
-        }
+        let fileName = uuid.v4() + ".jpg"
+
+        await image.mv(path.resolve(__dirname, "..", "static", fileName))
+
+        const brand = await Brand.create({name, image: fileName})
+
         return res.json(brand)
 
     } catch (error) {

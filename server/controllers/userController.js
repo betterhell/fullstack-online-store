@@ -1,7 +1,8 @@
 const ApiError = require("../error/ApiError")
-const bcrypt = require("bcrypt")
 const {User, Basket} = require("../models/models")
 const JwtGenerator = require("../JwtGenerator/JwtGenetator")
+
+const bcrypt = require("bcrypt")
 
 const registration = async (req, res, next) => {
     try {

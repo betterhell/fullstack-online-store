@@ -1,18 +1,25 @@
-const {Product, ProductInfo} = require("../models/models")
+const {Product, ProductInfo, ProductImages} = require("../models/models")
 const ApiError = require("../error/ApiError")
+
 const uuid = require("uuid")
 const path = require("path")
+
+const createProductImage = async (image, productId) => {
+    let fileName = uuid.v4() + path.extname(image.name)
+
+    await image.mv(path.resolve(__dirname, "..", "static", fileName))
+
+    return await ProductImages.create({name: fileName, initialName: image.name, productId})
+}
 
 const createProduct = async (req, res, next) => {
     try {
         let {name, price, brandId, info} = req.body
-        const {image} = req.files
+        let {images} = req.files
 
-        let fileName = uuid.v4() + ".jpg"
+        const product = await Product.create({name, price, brandId})
 
-
-        await image.mv(path.resolve(__dirname, "..", "static", fileName))
-        const product = await Product.create({name, price, brandId, image: fileName})
+        images?.map((image) => createProductImage(image, product.id))
 
         if (info) {
             info = JSON.parse(info)
@@ -28,13 +35,16 @@ const createProduct = async (req, res, next) => {
 const getProduct = async (req, res, next) => {
     try {
         const {id} = req.params
-        const device = await Product.findOne(
+
+        const product = await Product.findOne(
             {
                 where: {id},
-                include: [{model: ProductInfo, as: 'info'}]
+                include: [{model: ProductInfo, as: 'info'}, {model: ProductImages, as: 'images'}]
             },
         )
-        return res.json(device)
+
+        return res.json(product)
+
     } catch (error) {
         next(ApiError.badRequest(error.message))
     }
@@ -69,23 +79,25 @@ const updateProduct = async (req, res, next) => {
     try {
         const {name, price, brandId, info} = req.body
         const {id} = req.params
-        const {image} = req.files
+        let {images} = req.files
 
-        let fileName = uuid.v4() + ".jpg"
+        await ProductImages.destroy({where: {productId: id}})
 
-        await image.mv(path.resolve(__dirname, "..", "static", fileName))
-
-        const product = await Product.update({name, price, brandId, image: fileName, info},
+        const product = await Product.update({name, price, brandId, info},
             {
                 where: {id},
+                include: [{model: ProductInfo, as: 'info'}, {model: ProductImages, as: 'images'}]
             },
         )
+
+        images?.map((image) => createProductImage(image, id))
 
         if (!product) {
             next(ApiError.badRequest("Product not found"))
         }
 
         return res.json({message: `Product ${id} was update`})
+
     } catch (error) {
         next(ApiError.badRequest(error.message))
     }
@@ -95,13 +107,13 @@ const deleteProduct = async (req, res, next) => {
     try {
         const {id} = req.params
 
-        const device = await Product.destroy(
+        const product = await Product.destroy(
             {
                 where: {id},
             },
         )
 
-        if (!device) {
+        if (!product) {
             next(ApiError.badRequest("Product not found"))
         }
 
