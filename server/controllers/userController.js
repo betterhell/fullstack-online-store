@@ -24,7 +24,14 @@ const registration = async (req, res, next) => {
         const basket = await Basket.create({userId: user.id})
 
         const token = JwtGenerator(user.id, email, role)
-        res.json({token})
+
+        const bearer = token.split(" ")[0]
+
+        res.cookie("token", bearer, {
+            maxAge: 3600 * 24
+        })
+
+        res.send()
     } catch (error) {
         next(ApiError.internal("Failed to sign up"))
     }
@@ -46,7 +53,12 @@ const login = async (req, res, next) => {
         }
 
         const token = JwtGenerator(user.id, user.email, user.role)
-        res.json({token})
+        const bearer = token.split(" ")[0]
+
+        res.cookie("token", bearer, {
+            maxAge: 3600 * 24
+        })
+        res.send()
     } catch (error) {
         next(ApiError.internal("Failed to sign in"))
     }
@@ -55,7 +67,13 @@ const login = async (req, res, next) => {
 const checkAuth = async (req, res, next) => {
     try {
         const token = JwtGenerator(req.user.id, req.user.email, req.user.role)
-        return res.json({token})
+
+        const bearer = token.split(" ")[0]
+
+        res.cookie("token", bearer, {
+            maxAge: 3600 * 24
+        })
+        res.send()
     } catch (error) {
         next(ApiError.internal("Failed to sign in"))
     }
