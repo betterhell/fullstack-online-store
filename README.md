@@ -1,8 +1,8 @@
 <h1>Online store</h1>
 
-Techs: 
+Backend:
 <ol>
 <li>Node.js</li>
 <li>Express.js</li>
-<li>PostgreSQL</li>
+<li>PostgreSQL + Sequelize ORM</li>
 </ol
