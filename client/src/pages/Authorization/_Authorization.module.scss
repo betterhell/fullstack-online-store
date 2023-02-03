@@ -1,0 +1,88 @@
+.authWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(23, 27, 36, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authBlock {
+  max-width: 376px;
+  width: 100%;
+  height: fit-content;
+  background-color: #FFFFFF;
+}
+
+.authContent {
+  padding: 36px;
+
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 12px 16px;
+      background-color: #F6F6F6;
+      border: none;
+      border-bottom: 1px solid #D1D1D3;
+
+      placeholder {
+        color: #8B8D92;
+      }
+    }
+
+    .email {
+      margin-bottom: 24px;
+    }
+
+    .password {
+      margin-bottom: 12px;
+    }
+  }
+
+  button {
+    border: none;
+  }
+
+  .forgotPassword_button {
+    color: #5D6066;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 145%;
+    text-decoration: none;
+    margin-bottom: 24px;
+  }
+
+  .login_button {
+    margin-bottom: 12px;
+    padding: 12px 24px;
+    background-color: #FCEC41;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 136%;
+  }
+
+  .createUser_button {
+    padding: 12px 24px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 136%;
+    border: 1px solid #D1D1D3;
+    background-color: #FFFFFF;;
+    cursor: pointer;
+  }
+}
