@@ -1,0 +1,101 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+svg {
+  path {
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: $yellow;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  @include font(normal, 500, 18px, 136%);
+
+  &:hover {
+    background-color: $darkGray;
+    color: #FFFFFF;
+
+    svg {
+      path {
+        stroke: #FFFFFF;
+      }
+    }
+  }
+
+
+  &:active {
+    color: $lightGray;
+
+    svg {
+      path {
+        stroke: $lightGray;
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: $lightGray;
+    cursor: not-allowed;
+    color: #FFFFFF;
+
+    svg {
+      path {
+        stroke: $lightGray;
+      }
+    }
+  }
+}
+
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid $lightGray;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: $textPrimary;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $darkGray;
+    color: #FFFFFF;
+
+    svg {
+      path {
+        stroke: #FFFFFF;
+      }
+    }
+  }
+
+  &:active {
+    color: $lightGray;
+
+    svg {
+      path {
+        stroke: $lightGray;
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: $lightGray;
+    cursor: not-allowed;
+    color: #FFFFFF;
+
+    svg {
+      path {
+        stroke: $lightGray;
+      }
+    }
+  }
+}

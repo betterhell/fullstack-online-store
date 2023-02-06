@@ -1,11 +1,13 @@
-import Authorization from "./pages/Authorization/Authorization";
-import "./App.scss"
-function App() {
+import "./App.scss";
+import Input from "./UI/Input/Input";
+import Main from "./pages/Main/Main";
+
+const App = () => {
   return (
     <div className="App">
-      <Authorization />
+      <Main />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
