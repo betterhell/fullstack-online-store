@@ -4,7 +4,7 @@ import styles from "./_Button.module.scss";
 interface ButtonProps {
   children?: string;
   icon?: React.ReactElement;
-  onClick: () => void;
+  onClick?: () => void;
   theme: string | boolean;
   isDisabled?: boolean;
 }
