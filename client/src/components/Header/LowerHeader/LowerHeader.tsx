@@ -7,31 +7,31 @@ const LowerHeader = () => {
       <div className={styles.lowerHeader__content}>
         <ul className={styles.lowerHeader__category}>
           <li>
-            <a href="">Акции</a>
+            <a href="/actions">Акции</a>
           </li>
           <li>
-            <a href="">Строительные материалы</a>
+            <a href="/materials">Строительные материалы</a>
           </li>
           <li>
-            <a href="">Керамическая плитка</a>
+            <a href="/ceramics">Керамическая плитка</a>
           </li>
           <li>
-            <a href="">Краски</a>
+            <a href="/paints">Краски</a>
           </li>
           <li>
-            <a href="">Сантехника</a>
+            <a href="/plumbings">Сантехника</a>
           </li>
           <li>
-            <a href="">Напольные покрытия</a>
+            <a href="/floors">Напольные покрытия</a>
           </li>
           <li>
-            <a href="">Инструменты</a>
+            <a href="/instruments">Инструменты</a>
           </li>
           <li>
-            <a href="">Обои</a>
+            <a href="/wallpapers">Обои</a>
           </li>
           <li>
-            <a href="">Окна</a>
+            <a href="/windows">Окна</a>
           </li>
         </ul>
       </div>
