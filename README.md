@@ -3,6 +3,7 @@
 Backend:
 <ol>
 <li>Node.js</li>
+<li>JavaScript</li>
 <li>Express.js</li>
 <li>PostgreSQL + Sequelize ORM</li>
 </ol
