@@ -1,0 +1,114 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.middleHeader {
+  display: flex;
+  padding: 10px 8vw;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E8E9EA;
+}
+
+.logo {
+  margin-right: 16px;
+}
+
+.searchInput {
+  margin-left: 16px;
+  margin-right: 43px;
+}
+
+.buttonBar {
+  display: flex;
+  gap: 2px;
+  justify-content: flex-end;
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: $globalTrans;
+
+    p {
+      margin: 0;
+      @include font(normal, 500, 15px, 145%);
+      color: $middleHeaderTextColor;
+    }
+
+    &:hover {
+      svg {
+        path {
+          stroke: $darkGray;
+        }
+      }
+      p {
+        color: $darkGray;
+      }
+    }
+  }
+}
+
+//
+
+@media screen and (max-width: $tablet) {
+  .middleHeader {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    flex-wrap: wrap;
+    padding: 10px 2vw;
+  };
+
+  .middleHeader__interactions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    flex-wrap: wrap;
+    grid-row: 2;
+  }
+
+  .searchInput {
+    grid-row: 2;
+    grid-column: span 3;
+    padding-right: 5vw;
+    margin: 10px 0 0 0;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .middleHeader {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    flex-wrap: wrap;
+    padding: 10px 22px;
+  };
+
+  .buttonBar {
+    justify-content: center;
+    .profileBtn, .ordersBtn {
+      display: none;
+    }
+    .basketBtn {
+      p {
+        display: none;
+      }
+    }
+    order: 3;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .searchInput {
+    padding-right: 34px;
+  }
+
+}
+
+@media screen and (min-width: $tablet) {
+  .searchInput {
+    width: 444px;
+  }
+
+}

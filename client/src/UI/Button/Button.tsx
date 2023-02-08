@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
       className={theme === "primary" ? styles.btnPrimary : styles.btnSecondary}
     >
       {icon}
-      {children}
+      <p>{children}</p>
     </button>
   );
 };

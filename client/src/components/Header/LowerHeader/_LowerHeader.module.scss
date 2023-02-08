@@ -1,0 +1,39 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.lowerHeaderWrapper {
+  padding: 10px 8vw;
+  border-bottom: 1px solid #E8E9EA;
+  transition: $globalTrans;
+}
+
+.lowerHeader__content {
+}
+
+.lowerHeader__category {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  justify-content: space-between;
+  list-style-type: none;
+  li {
+    a {
+      text-decoration: none;
+      @include font(normal, 500, 16px, 150%);
+      color: $lowerHeaderTextColor;
+
+      &:hover {
+        color: $darkGray;
+      }
+    }
+  }
+}
+
+//
+
+@media screen and (max-width: $desktop) {
+  .lowerHeaderWrapper {
+    display: none;
+  }
+}

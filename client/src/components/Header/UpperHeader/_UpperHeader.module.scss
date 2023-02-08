@@ -66,4 +66,15 @@
   .brands, .docs {
     display: none;
   }
+
+  .upperHeaderWrapper {
+    padding: 10px 2vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .upperHeaderWrapper {
+    display: none;
+  }
+
 }
