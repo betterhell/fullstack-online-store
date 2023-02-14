@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./_Authorization.module.scss";
+import styles from "./Authorization.module.scss";
 
 const Authorization = () => {
   return (

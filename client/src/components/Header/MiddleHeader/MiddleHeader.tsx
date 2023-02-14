@@ -1,16 +1,12 @@
 import React from "react";
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
-import styles from "./_MiddleHeader.module.scss";
-// @ts-ignore
+import styles from "./MiddleHeader.module.scss";
+
 import { ReactComponent as Logo } from "../../../assets/logo/Logo.svg";
-// @ts-ignore
 import { ReactComponent as MenuIcon } from "../../../assets/icons/menuIcon24px.svg";
-// @ts-ignore
 import { ReactComponent as ProfileIcon } from "../../../assets/icons/userIcon24px.svg";
-// @ts-ignore
 import { ReactComponent as OrdersIcon } from "../../../assets/icons/orderIcon24px.svg";
-// @ts-ignore
 import { ReactComponent as BasketIcon } from "../../../assets/icons/basketIcon24px.svg";
 
 const MiddleHeader = () => {

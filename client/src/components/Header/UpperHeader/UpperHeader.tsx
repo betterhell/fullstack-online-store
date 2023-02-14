@@ -1,7 +1,7 @@
 import React from "react";
-// @ts-ignore
+import styles from "./UpperHeader.module.scss";
+
 import { ReactComponent as LocationIcon } from "../../../assets/icons/locationIcon.svg";
-import styles from "./_UpperHeader.module.scss";
 
 const UpperHeader = () => {
   return (

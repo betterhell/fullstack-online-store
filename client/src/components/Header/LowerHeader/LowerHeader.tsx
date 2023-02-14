@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./_LowerHeader.module.scss";
+import styles from "./LowerHeader.module.scss";
 
 const LowerHeader = () => {
   return (
