@@ -38,7 +38,7 @@
       border: none;
       border-bottom: 1px solid #D1D1D3;
 
-      placeholder {
+      &::placeholder {
         color: #8B8D92;
       }
     }
