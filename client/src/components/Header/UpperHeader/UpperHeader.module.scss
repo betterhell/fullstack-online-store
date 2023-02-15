@@ -9,35 +9,7 @@
   padding: 10px 8vw;
 }
 
-.upperHeader__location {
 
-  button {
-    background-color: transparent;
-    border: none;
-    @include font(normal, 500, 15px, 145%);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: $upperHeaderTextColor;
-    gap: 8px;
-    transition: $globalTrans;
-
-    svg {
-      margin-bottom: 2px;
-    }
-
-    &:hover {
-      color: $darkGray;
-
-      svg {
-        path {
-          stroke: $darkGray;
-        }
-      }
-    }
-
-  }
-}
 
 .upperHeader__brands {
   display: flex;

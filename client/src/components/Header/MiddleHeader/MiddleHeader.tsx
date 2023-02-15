@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
 import styles from "./MiddleHeader.module.scss";
@@ -8,8 +8,16 @@ import { ReactComponent as MenuIcon } from "../../../assets/icons/menuIcon24px.s
 import { ReactComponent as ProfileIcon } from "../../../assets/icons/userIcon24px.svg";
 import { ReactComponent as OrdersIcon } from "../../../assets/icons/orderIcon24px.svg";
 import { ReactComponent as BasketIcon } from "../../../assets/icons/basketIcon24px.svg";
+import { ReactComponent as CloseMenu } from "../../../assets/icons/closeIcon17px.svg";
+import MobileMenu from "../../MobileMenu/MobileMenu";
 
 const MiddleHeader = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className={styles.middleHeader}>
       <div className={styles.logo}>
@@ -21,6 +29,17 @@ const MiddleHeader = () => {
       <div className={styles.menu}>
         <Button icon={<MenuIcon />} children="Каталог" theme="primary" />
       </div>
+
+      <div className={styles.mobileMenu}>
+        <Button
+          onClick={() => toggleMenu()}
+          icon={isOpen ? <MenuIcon /> : <CloseMenu />}
+          children="Каталог"
+          theme="primary"
+        />
+      </div>
+
+      {!isOpen && <MobileMenu />}
 
       <div className={styles.searchInput}>
         <Input />

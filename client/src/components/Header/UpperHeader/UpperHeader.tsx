@@ -1,16 +1,11 @@
 import React from "react";
 import styles from "./UpperHeader.module.scss";
-
-import { ReactComponent as LocationIcon } from "../../../assets/icons/locationIcon.svg";
+import Location from "../../../UI/Location/Location";
 
 const UpperHeader = () => {
   return (
     <div className={styles.upperHeaderWrapper}>
-      <div className={styles.upperHeader__location}>
-        <button>
-          <LocationIcon /> Москва
-        </button>
-      </div>
+      <Location />
       <div>
         <ol className={styles.upperHeader__brands}>
           <li className={styles.brands}>

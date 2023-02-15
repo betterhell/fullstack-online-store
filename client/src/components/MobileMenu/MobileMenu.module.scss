@@ -1,0 +1,58 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.mobileMenu {
+  height: 100%;
+  position: fixed;
+  top: 131px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 22px;
+  width: 87%;
+}
+
+.mobileMenu__controls {
+  width: 100%;
+  border-bottom: 1px solid $border;
+}
+
+.mobileMenu__btns {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  button {
+    gap: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font(normal, 500, 18px, 136%);
+    padding: 12px 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .menu {
+    background-color: $yellow;
+    border: 1px solid transparent;
+  }
+
+  .profileBtn {
+    background: #FFFFFF;
+    border: 1px solid #D1D1D3;
+  }
+
+  .ordersBtn {
+    background: #FFFFFF;
+    border: 1px solid #D1D1D3;
+  }
+}
+
+.mobileMenu__changeCity {
+  margin-bottom: 20px;
+}

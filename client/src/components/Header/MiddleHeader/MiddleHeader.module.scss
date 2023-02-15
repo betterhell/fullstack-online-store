@@ -2,6 +2,7 @@
 @import "../../../styles/variables";
 
 .middleHeader {
+  position: relative;
   display: flex;
   padding: 10px 8vw;
   justify-content: space-between;
@@ -11,6 +12,10 @@
 
 .logo {
   margin-right: 16px;
+}
+
+.mobileMenu {
+  display: none;
 }
 
 .searchInput {
@@ -95,6 +100,14 @@
       }
     }
     order: 3;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
   }
 
   .logo {
