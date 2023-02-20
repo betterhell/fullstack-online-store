@@ -3,14 +3,14 @@
 
 .mobileMenu {
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 131px;
   left: 0;
   display: flex;
+  padding: 10px 22px;
   flex-direction: column;
-  align-items: center;
-  padding: 14px 22px;
-  width: 87%;
+  max-width: 600px;
+  width: calc(100% - 44px)
 }
 
 .mobileMenu__controls {
@@ -55,4 +55,59 @@
 
 .mobileMenu__changeCity {
   margin-bottom: 20px;
+}
+
+.mobileMenu__content {
+  border-bottom: 1px solid $border;
+
+  .mobileMenu__category {
+    list-style-type: none;
+    padding: 14px 0 14px 3px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    a {
+      text-decoration: none;
+      @include font(normal, 500, 16px, 150%);
+      color: $lowerHeaderTextColor;
+
+      &:hover {
+        color: $darkGray;
+      }
+    }
+  }
+}
+
+.mobileMenu__info {
+  .mobileMenu__content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 0 14px 3px;
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: $upperHeaderTextColor;
+        @include font(normal, 500, 15px, 145%);
+        transition: $globalTrans;
+
+        &:hover {
+          color: $darkGray;
+        }
+      }
+    }
+  }
+}
+
+//
+@media screen and (min-width: 600px) {
+  .mobileMenu {
+    display: none;
+  }
 }

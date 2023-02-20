@@ -28,8 +28,58 @@ const MobileMenu = () => {
           <Location />
         </div>
       </div>
-      <div></div>
-      <div></div>
+
+      <div className={styles.mobileMenu__content}>
+        <ul className={styles.mobileMenu__category}>
+          <li>
+            <a href="/actions">Акции</a>
+          </li>
+          <li>
+            <a href="/materials">Строительные материалы</a>
+          </li>
+          <li>
+            <a href="/ceramics">Керамическая плитка</a>
+          </li>
+          <li>
+            <a href="/paints">Краски</a>
+          </li>
+          <li>
+            <a href="/plumbings">Сантехника</a>
+          </li>
+          <li>
+            <a href="/floors">Напольные покрытия</a>
+          </li>
+          <li>
+            <a href="/instruments">Инструменты</a>
+          </li>
+          <li>
+            <a href="/wallpapers">Обои</a>
+          </li>
+          <li>
+            <a href="/windows">Окна</a>
+          </li>
+        </ul>
+      </div>
+
+      <div className={styles.mobileMenu__info}>
+        <ul className={styles.mobileMenu__content}>
+          <li className={styles.brands}>
+            <a href="/brands">Бренды</a>
+          </li>
+          <li className={styles.delivery}>
+            <a href="/delivery">Доставка</a>
+          </li>
+          <li className={styles.refund}>
+            <a href="/refund">Возврат</a>
+          </li>
+          <li className={styles.docs}>
+            <a href="/docs">Документация</a>
+          </li>
+          <li className={styles.contacts}>
+            <a href="/contacts">Контакты</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

@@ -12,10 +12,14 @@ import { ReactComponent as CloseMenu } from "../../../assets/icons/closeIcon17px
 import MobileMenu from "../../MobileMenu/MobileMenu";
 
 const MiddleHeader = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
   };
 
   return (
@@ -33,13 +37,13 @@ const MiddleHeader = () => {
       <div className={styles.mobileMenu}>
         <Button
           onClick={() => toggleMenu()}
-          icon={isOpen ? <MenuIcon /> : <CloseMenu />}
+          icon={!isOpen ? <MenuIcon /> : <CloseMenu />}
           children="Каталог"
           theme="primary"
         />
       </div>
 
-      {!isOpen && <MobileMenu />}
+      {isOpen && <MobileMenu />}
 
       <div className={styles.searchInput}>
         <Input />

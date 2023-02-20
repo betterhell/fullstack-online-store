@@ -1,5 +1,5 @@
 import "./App.scss";
-import Input from "./UI/Input/Input";
+
 import Main from "./pages/Main/Main";
 
 const App = () => {

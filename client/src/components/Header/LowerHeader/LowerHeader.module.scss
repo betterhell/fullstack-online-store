@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   gap: 30px;
+  align-items: center;
   justify-content: space-between;
   list-style-type: none;
   li {
@@ -35,4 +36,21 @@
   .lowerHeaderWrapper {
     display: none;
   }
+}
+
+@media screen and (max-width: 1330px) {
+  .lowerHeader__category {
+    li {
+      a {
+        text-decoration: none;
+        @include font(normal, 500, 13px, 150%);
+        color: $lowerHeaderTextColor;
+
+        &:hover {
+          color: $darkGray;
+        }
+      }
+    }
+  }
+
 }
