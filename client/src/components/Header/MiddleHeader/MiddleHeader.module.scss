@@ -54,7 +54,6 @@
 }
 
 //
-
 @media screen and (max-width: $tablet) {
   .middleHeader {
     display: grid;
@@ -71,13 +70,20 @@
     grid-row: 2;
   }
 
+  .logo {
+    order: 2;
+  }
+
+  .buttonBar {
+    order: 3;
+  }
+
   .searchInput {
     grid-row: 2;
     grid-column: span 3;
     padding-right: 5vw;
     margin: 10px 0 0 0;
   }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -123,7 +129,7 @@
 
 @media screen and (min-width: $tablet) {
   .searchInput {
-    width: 444px;
+    max-width: $tablet;
+    width: 100%;
   }
-
 }
