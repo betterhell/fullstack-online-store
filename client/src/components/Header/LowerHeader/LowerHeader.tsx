@@ -4,7 +4,7 @@ import styles from "./LowerHeader.module.scss";
 const LowerHeader = () => {
   return (
     <div className={styles.lowerHeaderWrapper}>
-      <div className={styles.lowerHeader__content}>
+      <nav className={styles.lowerHeader__content}>
         <ul className={styles.lowerHeader__category}>
           <li>
             <a href="/actions">Акции</a>
@@ -34,7 +34,7 @@ const LowerHeader = () => {
             <a href="/windows">Окна</a>
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };

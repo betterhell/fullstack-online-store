@@ -19,6 +19,7 @@
   justify-content: space-between;
   list-style-type: none;
   li {
+    width: fit-content;
     a {
       text-decoration: none;
       @include font(normal, 500, 16px, 150%);
@@ -41,16 +42,15 @@
 @media screen and (max-width: 1330px) {
   .lowerHeader__category {
     li {
+      width: min-content;
       a {
         text-decoration: none;
         @include font(normal, 500, 13px, 150%);
         color: $lowerHeaderTextColor;
-
         &:hover {
           color: $darkGray;
         }
       }
     }
   }
-
 }

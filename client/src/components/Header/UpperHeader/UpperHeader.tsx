@@ -6,8 +6,8 @@ const UpperHeader = () => {
   return (
     <div className={styles.upperHeaderWrapper}>
       <Location />
-      <div>
-        <ol className={styles.upperHeader__brands}>
+      <nav>
+        <ul className={styles.upperHeader__brands}>
           <li className={styles.brands}>
             <a href="/brands">Бренды</a>
           </li>
@@ -23,8 +23,8 @@ const UpperHeader = () => {
           <li className={styles.contacts}>
             <a href="/contacts">Контакты</a>
           </li>
-        </ol>
-      </div>
+        </ul>
+      </nav>
     </div>
   );
 };
