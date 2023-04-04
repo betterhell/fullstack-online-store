@@ -2,6 +2,7 @@
 @import "../../styles/variables";
 
 .mobileMenu {
+  background-color: white;
   height: 100%;
   position: absolute;
   top: 131px;
@@ -14,11 +15,13 @@
 }
 
 .mobileMenu__controls {
+  background-color: white;
   width: 100%;
   border-bottom: 1px solid $border;
 }
 
 .mobileMenu__btns {
+  background-color: white;
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -61,6 +64,7 @@
   border-bottom: 1px solid $border;
 
   .mobileMenu__category {
+    background-color: white;
     list-style-type: none;
     padding: 14px 0 14px 3px;
     margin: 0;
