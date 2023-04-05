@@ -1,0 +1,126 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.errorPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.errorPage_content {
+  box-sizing: border-box;
+  padding: 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 580px;
+  min-height: 310px;
+  border: 1px solid $border ;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: $yellow;
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+    @include font(normal, 500, 18px, 136%);
+
+    &:hover {
+      background-color: $darkGray;
+      color: #FFFFFF;
+
+      svg {
+        line {
+          stroke: #FFFFFF;
+        }
+        path {
+          stroke: #FFFFFF;
+        }
+      }
+    }
+
+
+    &:active {
+      color: $lightGray;
+
+      svg {
+        line {
+          stroke: $lightGray;
+        }
+        path {
+          stroke: $lightGray;
+        }
+      }
+    }
+
+    &:disabled {
+      background-color: $lightGray;
+      cursor: not-allowed;
+      color: #FFFFFF;
+
+      svg {
+        line {
+          stroke: $lightGray;
+        }
+        path {
+          stroke: $lightGray;
+        }
+      }
+    }
+  }
+
+  h1, h3, h5 {
+    margin: 0 0 8px 0;
+  }
+
+  h1 {
+    @include font(normal, 700, 48px, 120%);
+    color: $textPrimary
+  }
+
+  h3 {
+    @include font(normal, 600, 34px, 130%);
+    color: $darkGray
+  }
+
+  h5 {
+    @include font(normal, 500, 18px, 136%);
+    color: $textPrimary;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .errorPage_content {
+
+    button {
+      @include font(normal, 500, 14px, 136%);
+    }
+
+    h1, h3, {
+      margin: 0 0 10px 0;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+    }
+  }
+
+  h1 {
+    @include font(normal, 700, 34px, 120%);
+  }
+
+  h3 {
+    @include font(normal, 600, 24px, 130%);
+  }
+
+  h5 {
+    @include font(normal, 500, 14px, 136%);
+  }
+}

@@ -6,6 +6,7 @@ import Actions from "./pages/Actions/Actions";
 import NotFound from "./pages/NotFound/NotFound";
 import React from "react";
 import MainPage from "./pages/Main/MainPage";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
