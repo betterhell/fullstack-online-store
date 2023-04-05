@@ -2,11 +2,12 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Actions from "./pages/Actions/Actions";
-import NotFound from "./pages/NotFound/NotFound";
+
 import React from "react";
-import MainPage from "./pages/Main/MainPage";
+import MainPage from "./Pages/Main/MainPage";
 import Footer from "./components/Footer/Footer";
+import Actions from "./Pages/Actions/Actions";
+import NotFound from "./Pages/NotFound/NotFound";
 
 const App = () => {
   return (

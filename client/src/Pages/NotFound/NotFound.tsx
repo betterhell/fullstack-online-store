@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../UI/Button/Button";
 import classes from "./NotFound.module.scss";
 import { useNavigate } from "react-router-dom";
 
