@@ -15,72 +15,65 @@ const Footer = () => {
     <div className={classes.footerWrapper}>
       <div className={classes.footer__content}>
         <div className={classes.footer__content_info}>
-          <NavLink to="/">
-            <LogoFooter />
-          </NavLink>
-
-          <div className={classes.footer__content_mail}>
-            <MailIcon />
-            <p>info@stroykastore.ru</p>
+          <div className={classes.footer__content_logo}>
+            <NavLink to="/">
+              <LogoFooter />
+            </NavLink>
           </div>
 
-          <div className={classes.footer__content_location}>
-            <LocationIcon />
-            <p>Москва, ул. Камушкина 10</p>
+          <div>
+            <div className={classes.footer__content_mail}>
+              <MailIcon />
+              <p>info@stroykastore.ru</p>
+            </div>
+
+            <div className={classes.footer__content_location}>
+              <LocationIcon />
+              <p>Москва, ул. Камушкина 10</p>
+            </div>
           </div>
         </div>
 
         <nav className={classes.footer__navigations}>
           <ul className={classes.footer__navigations_list}>
-            <div className={classes.footer__navigations_segment}>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/profile">Личный кабинет</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink style={{ color: "#E8E9EA" }} to="/orderlist">
-                  Заказы
-                </NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/favorite">Избранное</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/cart">Корзина</NavLink>
-              </li>
-            </div>
-
-            <div className={classes.footer__navigations_segment}>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/profile">Личный кабинет</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/catalogue">Каталог</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/actions">Акции</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/brands">Бренды</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/contacts">Контакты</NavLink>
-              </li>
-            </div>
-
-            <div className={classes.footer__navigations_segment}>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/forsellers">Стать продавцом</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/delivery">Доставка</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/refund">Возврат</NavLink>
-              </li>
-              <li className={classes.footer__navigations_list_item}>
-                <NavLink to="/docs">Документация</NavLink>
-              </li>
-            </div>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/profile">Личный кабинет</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink style={{ color: "#E8E9EA" }} to="/orderlist">
+                Заказы
+              </NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/favorite">Избранное</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/cart">Корзина</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/catalogue">Каталог</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/actions">Акции</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/brands">Бренды</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/contacts">Контакты</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/forsellers">Стать продавцом</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/delivery">Доставка</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/refund">Возврат</NavLink>
+            </li>
+            <li className={classes.footer__navigations_list_item}>
+              <NavLink to="/docs">Документация</NavLink>
+            </li>
           </ul>
         </nav>
       </div>
@@ -92,7 +85,12 @@ const Footer = () => {
           <img src={maestroBadge} alt="Maestro" />
           <img src={mirBadge} alt="Mir" />
         </div>
-        <p>made by betterhell</p>
+        <p>
+          made by{" "}
+          <a href="https://github.com/betterhell" target="_blank">
+            betterhell
+          </a>
+        </p>
       </div>
     </div>
   );

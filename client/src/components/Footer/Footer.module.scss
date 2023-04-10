@@ -13,17 +13,29 @@
   justify-content: space-between;
 }
 
-.footer__content_mail, .footer__content_location {
+.footer__content_info {
+  p {
+    margin: 0
+  }
+}
+
+.footer__content_mail, .footer__content_location, .footer__content_logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 0 16px 0;
 }
 
 .footer__navigations {
+  height: 100px;
+  box-sizing: border-box;
   ul {
     padding: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     li {
+      width: 275px;
       list-style-type: none;
       a {
         color: white;
@@ -33,22 +45,75 @@
   }
 }
 
-.footer__navigations_list_item {
-
-}
-
-.footer__navigations_segment {
-  max-width: 275px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: space-between;
-}
-
 .footer__info {
   padding: 16px 0 10px 0;
   border-top: 1px solid $upperHeaderTextColor;
   display: flex;
   justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #487dd2;
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .footer__content_info {
+    padding-right: 20px;
+  }
+
+  .footer__navigations {
+    ul {
+      li {
+        width: 130px;
+        a {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer__content_info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $upperHeaderTextColor;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer__content_info {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $upperHeaderTextColor;
+  }
+
+  .footer__info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__content {
+    padding: 0;
+  }
+
+  .footer__navigations {
+    height: fit-content;
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
