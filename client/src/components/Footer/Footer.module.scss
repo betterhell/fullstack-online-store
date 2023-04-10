@@ -99,13 +99,6 @@
     border-bottom: 1px solid $upperHeaderTextColor;
   }
 
-  .footer__info {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 767px) {
   .footer__content {
     padding: 0;
   }
@@ -115,5 +108,10 @@
     ul {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  .footer__info {
+    display: flex;
+    flex-direction: column;
   }
 }
