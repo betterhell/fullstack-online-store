@@ -12,3 +12,12 @@
   font-size: $fsz;
   line-height: $lh;
 }
+
+@mixin button($color, $border) {
+  cursor: pointer;
+  background: $color;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid $border;
+}

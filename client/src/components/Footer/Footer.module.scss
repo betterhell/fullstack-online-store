@@ -5,6 +5,10 @@
   background-color: $darkGray;
   color: $border;
   padding: 10px 8vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .footer__content {

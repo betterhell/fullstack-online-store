@@ -1,13 +1,21 @@
 import React from "react";
 import styles from "./_Input.module.scss";
-// @ts-ignore
-import { ReactComponent as SearchIcon } from "../../assets/icons/searchIcon.svg";
 
-const Input = () => {
+interface inputProps {
+  type: "text" | "password";
+  placeholder: string;
+  icon?: React.ReactNode;
+}
+
+const Input: React.FC<inputProps> = ({ type, placeholder, icon }) => {
   return (
     <div className={styles.searchContainer}>
-      <input className={styles.searchInput} placeholder="Поиск" type="text" />
-      <button className={styles.searchButton}>{<SearchIcon />}</button>
+      <input
+        className={styles.searchInput}
+        placeholder={placeholder}
+        type={type}
+      />
+      {icon && <button className={styles.searchButton}>{icon}</button>}
     </div>
   );
 };

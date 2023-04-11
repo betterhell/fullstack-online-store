@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./_Button.module.scss";
 
 interface ButtonProps {
-  children?: string;
+  children?: React.ReactNode;
   icon?: React.ReactElement;
   onClick?: () => void;
   theme: string | boolean;

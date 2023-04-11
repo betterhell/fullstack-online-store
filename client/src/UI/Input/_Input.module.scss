@@ -7,7 +7,8 @@
 
 .searchInput {
   width: 100%;
-  padding: 10px 16px 10px 16px;
+  padding: 10px 45px 10px 16px;
+  box-sizing: border-box;
   background-color: $gray;
   border: none;
   border-bottom: 1px solid $lightGray;
@@ -29,9 +30,10 @@
 .searchButton {
   z-index: 10;
   position: absolute;
-  top: -2px;
-  right: -32px;
-  padding: 10px 12px;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 8px 12px;
   cursor: pointer;
   border: none;
   background-color: transparent;
