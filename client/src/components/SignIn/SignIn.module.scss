@@ -17,6 +17,12 @@
     color: $darkGray;
     margin-bottom: 8px;
   }
+
+  &_role {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
 }
 
 .modal_forget__password {
@@ -38,5 +44,6 @@
 
   &_secondary {
     @include button(#FFF,  $lightGray);
+    width: 100%;
   }
 }

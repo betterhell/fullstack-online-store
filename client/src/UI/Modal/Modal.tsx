@@ -3,7 +3,7 @@ import styles from "./Modal.module.scss";
 
 interface modalProps {
   children: React.ReactNode;
-  onClose: React.MouseEventHandler;
+  onClose?: React.MouseEventHandler;
 }
 
 const Modal: React.FC<modalProps> = ({ children, onClose }) => {

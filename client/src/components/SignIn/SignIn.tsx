@@ -3,14 +3,16 @@ import styles from "./SignIn.module.scss";
 
 import Input from "../../UI/Input/Input";
 import Modal from "../../UI/Modal/Modal";
+import SignUp from "../SignUp/SignUp";
 
 interface signInProps {
-  onOpen: () => void;
+  onOpen?: () => void;
 }
 
 const SignIn: React.FC<signInProps> = ({ onOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -20,41 +22,58 @@ const SignIn: React.FC<signInProps> = ({ onOpen }) => {
     setPassword(e.target.value);
   };
 
+  const signUp = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
-    <Modal onClose={onOpen}>
-      <h1 className={styles.modal_header}>Вход</h1>
-      <form>
-        <div className={styles.modal__input}>
-          <label htmlFor="">E-mail</label>
-          <Input
-            value={email}
-            onChange={onChangeEmail}
-            type="text"
-            placeholder="youmail@mail.com"
-          />
-        </div>
-        <div className={styles.modal__input}>
-          <label htmlFor="">Пароль</label>
-          <Input
-            value={password}
-            onChange={onChangePassword}
-            type="password"
-            placeholder="****************"
-          />
-        </div>
-        <button className={styles.modal_forget__password}>
-          Забыли пароль?
-        </button>
+    <>
+      {isLogin ? (
+        <>
+          <Modal onClose={onOpen}>
+            <h1 className={styles.modal_header}>Вход</h1>
+            <form>
+              <div className={styles.modal__input}>
+                <label htmlFor="">E-mail</label>
+                <Input
+                  value={email}
+                  onChange={onChangeEmail}
+                  type="text"
+                  placeholder="youmail@mail.com"
+                />
+              </div>
+              <div className={styles.modal__input}>
+                <label htmlFor="">Пароль</label>
+                <Input
+                  value={password}
+                  onChange={onChangePassword}
+                  type="password"
+                  placeholder="****************"
+                />
+              </div>
+              <button className={styles.modal_forget__password}>
+                Забыли пароль?
+              </button>
 
-        <div className={styles.modal__controls}>
-          <button className={styles.modal__controls_primary}>Войти</button>
-        </div>
-      </form>
+              <div className={styles.modal__controls}>
+                <button className={styles.modal__controls_primary}>
+                  Войти
+                </button>
+              </div>
+            </form>
 
-      <button className={styles.modal__controls_secondary}>
-        Создать учётную запись
-      </button>
-    </Modal>
+            <button
+              onClick={signUp}
+              className={styles.modal__controls_secondary}
+            >
+              Создать учётную запись
+            </button>
+          </Modal>
+        </>
+      ) : (
+        <SignUp />
+      )}
+    </>
   );
 };
 

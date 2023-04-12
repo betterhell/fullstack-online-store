@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./_Input.module.scss";
 
 interface inputProps {
-  type: "text" | "password";
-  placeholder: string;
+  type: "text" | "password" | "checkbox" | "radio";
+  placeholder?: string;
   icon?: React.ReactNode;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  text?: string;
 }
 
 const Input: React.FC<inputProps> = ({
@@ -15,6 +16,7 @@ const Input: React.FC<inputProps> = ({
   icon,
   value,
   onChange,
+  text,
 }) => {
   return (
     <div className={styles.searchContainer}>
@@ -25,6 +27,7 @@ const Input: React.FC<inputProps> = ({
         placeholder={placeholder}
         type={type}
       />
+      {text}
       {icon && <button className={styles.searchButton}>{icon}</button>}
     </div>
   );
