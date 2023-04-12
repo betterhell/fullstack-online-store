@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.modalWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 27, 36, 0.6);
+}
+
+.modalWrapper__closeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 30px;
+  top:0;
+  right: 0;
+  height: 30px;
+
+  &_first {
+    width: 30px;
+    height: 1px;
+    background-color: white;
+    transform: rotate(45deg)
+  }
+
+  &_second {
+    width: 30px;
+    height: 1px;
+    background-color: white;
+    transform: rotate(-45deg);
+  }
+}
+
+.modal {
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+}
+
+.modal__content {
+  padding: 36px;
+}
