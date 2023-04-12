@@ -31,8 +31,8 @@ const SignIn: React.FC<signInProps> = ({ onOpen }) => {
       {isLogin ? (
         <>
           <Modal onClose={onOpen}>
-            <h1 className={styles.modal_header}>Вход</h1>
             <form>
+              <h1 className={styles.modal_header}>Вход</h1>
               <div className={styles.modal__input}>
                 <label htmlFor="">E-mail</label>
                 <Input
@@ -71,7 +71,7 @@ const SignIn: React.FC<signInProps> = ({ onOpen }) => {
           </Modal>
         </>
       ) : (
-        <SignUp />
+        <SignUp onOpen={onOpen} />
       )}
     </>
   );

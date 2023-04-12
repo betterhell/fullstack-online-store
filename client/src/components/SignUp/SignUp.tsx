@@ -12,7 +12,7 @@ const SignUp: React.FC<signUpProps> = ({ onOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("buyer");
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -32,8 +32,8 @@ const SignUp: React.FC<signUpProps> = ({ onOpen }) => {
 
   return (
     <Modal onClose={onOpen}>
-      <h1 className={styles.modal_header}>Регистрация</h1>
       <form>
+        <h1 className={styles.modal_header}>Регистрация</h1>
         <div className={styles.modal__input}>
           <label htmlFor="">E-mail</label>
           <Input
@@ -64,7 +64,6 @@ const SignUp: React.FC<signUpProps> = ({ onOpen }) => {
 
         <div className={styles.modal__input_role}>
           <input
-            defaultChecked
             value="buyer"
             checked={role === "buyer"}
             onChange={roleToggle}
