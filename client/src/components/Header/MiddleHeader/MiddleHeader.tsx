@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Input from "../../../UI/Input/Input";
-import Button from "../../../UI/Button/Button";
+
 import styles from "./MiddleHeader.module.scss";
 
 import { ReactComponent as Logo } from "../../../assets/logo/Logo.svg";
@@ -10,8 +9,11 @@ import { ReactComponent as OrdersIcon } from "../../../assets/icons/orderIcon24p
 import { ReactComponent as BasketIcon } from "../../../assets/icons/basketIcon24px.svg";
 import { ReactComponent as CloseMenu } from "../../../assets/icons/closeIcon17px.svg";
 import { ReactComponent as SearchIcon } from "../../../assets/icons/searchIcon.svg";
+
 import MobileMenu from "../../MobileMenu/MobileMenu";
 import SignIn from "../../SignIn/SignIn";
+import Input from "../../../UI/Input/Input";
+import Button from "../../../UI/Button/Button";
 
 const MiddleHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
