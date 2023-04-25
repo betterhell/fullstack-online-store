@@ -4,6 +4,8 @@ import styles from "./SignIn.module.scss";
 import Input from "../../UI/Input/Input";
 import Modal from "../../UI/Modal/Modal";
 import SignUp from "../SignUp/SignUp";
+import { login } from "./login";
+import { useNavigate } from "react-router-dom";
 
 interface signInProps {
   onOpen?: () => void;
@@ -13,6 +15,8 @@ const SignIn: React.FC<signInProps> = ({ onOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
+
+  const navigate = useNavigate();
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -26,12 +30,17 @@ const SignIn: React.FC<signInProps> = ({ onOpen }) => {
     setIsLogin(!isLogin);
   };
 
+  const handleLogin = () => {
+    login(email, password);
+    navigate("/");
+  };
+
   return (
     <>
       {isLogin ? (
         <>
           <Modal onClose={onOpen}>
-            <form>
+            <form onSubmit={handleLogin}>
               <h1 className={styles.modal_header}>Вход</h1>
               <div className={styles.modal__input}>
                 <label htmlFor="">E-mail</label>

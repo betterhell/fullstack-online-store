@@ -4,6 +4,9 @@ import styles from "../SignIn/SignIn.module.scss";
 import Modal from "../../UI/Modal/Modal";
 import Input from "../../UI/Input/Input";
 
+import { registration } from "./resgistration";
+import { useNavigate } from "react-router-dom";
+
 interface signUpProps {
   onOpen?: () => void;
 }
@@ -13,6 +16,8 @@ const SignUp: React.FC<signUpProps> = ({ onOpen }) => {
   const [password, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
   const [role, setRole] = useState("buyer");
+
+  const navigate = useNavigate();
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -30,9 +35,14 @@ const SignUp: React.FC<signUpProps> = ({ onOpen }) => {
     setRole(e.target.value);
   };
 
+  const handleRegisterNewUser = () => {
+    registration(email, password, role);
+    navigate("/");
+  };
+
   return (
     <Modal onClose={onOpen}>
-      <form>
+      <form onSubmit={handleRegisterNewUser}>
         <h1 className={styles.modal_header}>Регистрация</h1>
         <div className={styles.modal__input}>
           <label htmlFor="">E-mail</label>
