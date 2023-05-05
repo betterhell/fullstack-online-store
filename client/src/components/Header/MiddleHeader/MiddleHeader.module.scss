@@ -82,7 +82,7 @@
   .searchInput {
     grid-row: 2;
     grid-column: span 3;
-    padding-right: 5vw;
+    padding-right: 0;
     margin: 10px 0 0 0;
   }
 }
@@ -121,11 +121,6 @@
     order: 1;
     margin-right: 0;
   }
-
-  .searchInput {
-    padding-right: 34px;
-  }
-
 }
 
 @media screen and (min-width: $tablet) {
